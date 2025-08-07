@@ -1,0 +1,13 @@
+def selection_sort_by_length(arr):
+    n = len(arr)
+    for i in range(n):
+       
+        min_index = i
+        for j in range(i+1, n):
+            if len(arr[j]) < len(arr[min_index]):
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    return arr
+foods = ["Biriyani", "Thali", "CheeseBurger", "Ice Cream", "Mandhi", "Alfam", "Chocolate"]
+sorted_foods = selection_sort_by_length(foods.copy())
+print("Sorted by length:", sorted_foods)
